@@ -14,12 +14,6 @@ SRC_URI = "${GNOME_MIRROR}/glib/${SHRT_VER}/glib-${PV}.tar.xz \
            file://uclibc.patch \
           "
 
-#           file://0001-gio-Fix-Werror-format-string-errors-from-mismatched-.patch \
-#           file://ptest-dbus.patch \
-#           file://gtest-skip-fixes.patch \
-#           file://gio-test-race.patch \
-#
-
 SRC_URI_append_class-native = " file://glib-gettextize-dir.patch"
 
 SRC_URI[md5sum] = "26d1d08e478fc48c181ca8be44f5b69f"

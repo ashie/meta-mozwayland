@@ -4,13 +4,18 @@ MAJ_VER = "${@oe.utils.trim_version("${PV}", 2)}"
 
 SRC_URI = "http://ftp.gnome.org/pub/gnome/sources/gtk+/${MAJ_VER}/gtk+-${PV}.tar.xz \
            file://hardcoded_libtool.patch \
-           file://fix-flags-for-native.patch \
-           file://fix-extract-string-cross-build-error.patch \
-           file://fix-updateiconcache-build-error.patch \
+           file://Dont-force-csd.patch \
+           file://Do-not-try-to-initialize-GL-without-libGL.patch \
+           file://0001-Add-disable-opengl-configure-option.patch \
+           file://wayland-memfd-fallback.patch \
+           file://downgrade-xdg-shell.patch \
+           file://disable-poitner-scale.patch \
           "
 
-SRC_URI[md5sum] = "7ce5d060885bf344ae23f308e55e93df"
-SRC_URI[sha256sum] = "3ac87659112ced9e5ee5bd55d055faa881aafd040f26ca40b0d8ba0fa6509c83"
+DEPENDS += "libepoxy"
+
+SRC_URI[md5sum] = "c7a5b21d28572bb1d6fc8803864618c0"
+SRC_URI[sha256sum] = "783d7f8b00f9b4224cc94d7da885a67598e711c2d6d79c9c873c6b203e83acbd"
 
 S = "${WORKDIR}/gtk+-${PV}"
 

@@ -22,6 +22,7 @@ SRC_URI[archive.md5sum] = "6fc88c6529890d6c8e03074d57a3eceb"
 SRC_URI[archive.sha256sum] = "e27af54172c72b3ac6be53c9a4c67053e16c905e02addcf3a603ceb2005c1a40"
 
 DEPENDS = "glib-2.0 glib-2.0-native fontconfig freetype virtual/libiconv cairo harfbuzz"
+DEPENDS_class-native = "glib-2.0-native fontconfig-native freetype-native cairo-native harfbuzz-native"
 
 PACKAGECONFIG ??= "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11', '', d)}"
 PACKAGECONFIG[x11] = "--with-xft,--without-xft,virtual/libx11 libxft"

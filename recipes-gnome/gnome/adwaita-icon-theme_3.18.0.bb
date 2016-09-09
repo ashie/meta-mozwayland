@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=c84cac88e46fc07647ea07e6c24eeb7c"
 #inherit allarch autotools pkgconfig gettext gtk-icon-cache upstream-version-is-even
 inherit autotools pkgconfig gettext gtk-icon-cache
 
-DEPENDS += "intltool-native"
+DEPENDS += "intltool-native gtk-icon-utils-native"
 
 MAJ_VER = "${@oe.utils.trim_version("${PV}", 2)}"
 SRC_URI = "${GNOME_MIRROR}/${BPN}/${MAJ_VER}/${BPN}-${PV}.tar.xz \

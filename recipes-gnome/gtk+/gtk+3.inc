@@ -100,6 +100,7 @@ GTKBASE_RRECOMMENDS ?= "liberation-fonts \
                         gdk-pixbuf-loader-gif \
                         gdk-pixbuf-loader-xpm \
                         shared-mime-info \
+                        adwaita-icon-theme-symbolic \
                         "
 GTKGLIBC_RRECOMMENDS ?= "${GTKBASE_RRECOMMENDS} glibc-gconv-iso8859-1"
 

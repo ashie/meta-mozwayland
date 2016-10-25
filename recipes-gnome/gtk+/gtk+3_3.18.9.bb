@@ -10,6 +10,7 @@ SRC_URI = "http://ftp.gnome.org/pub/gnome/sources/gtk+/${MAJ_VER}/gtk+-${PV}.tar
            file://wayland-memfd-fallback.patch \
            file://downgrade-xdg-shell.patch \
            file://disable-poitner-scale.patch \
+           file://wayland-dnd-avoid-abort.patch \
           "
 
 DEPENDS += "libepoxy"

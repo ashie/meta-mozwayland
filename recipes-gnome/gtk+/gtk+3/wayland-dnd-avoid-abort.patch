@@ -1,0 +1,23 @@
+diff -Nur gtk+-3.18.9-bak/gdk/wayland/gdkdnd-wayland.c gtk+-3.18.9/gdk/wayland/gdkdnd-wayland.c
+--- gtk+-3.18.9-bak/gdk/wayland/gdkdnd-wayland.c	2016-01-07 12:25:56.000000000 +0900
++++ gtk+-3.18.9/gdk/wayland/gdkdnd-wayland.c	2016-10-25 09:56:58.974022935 +0900
+@@ -375,11 +375,14 @@
+       g_free (mimetype);
+     }
+ 
+-  wl_data_device_start_drag (gdk_wayland_device_get_data_device (device),
+-                             context_wayland->data_source,
+-                             gdk_wayland_window_get_wl_surface (toplevel),
+-			     context_wayland->dnd_surface,
+-                             _gdk_wayland_display_get_serial (display_wayland));
++  if (GDK_IS_WAYLAND_WINDOW (toplevel))
++    {
++      wl_data_device_start_drag (gdk_wayland_device_get_data_device (device),
++				 context_wayland->data_source,
++				 gdk_wayland_window_get_wl_surface (toplevel),
++				 context_wayland->dnd_surface,
++				 _gdk_wayland_display_get_serial (display_wayland));
++    }
+ 
+   return context;
+ }
